@@ -1,10 +1,13 @@
 import time
-from pages.login_page import FormPage
+
+from controls.input import Input
+from pages.login_page import LoginPage
 
 
 def test_form_username(driver):
-    login_page = FormPage(driver)
+    login_page = LoginPage(driver)
     login_page.open()
-    login_page.username_input.get_input().send_keys('ARBYZIC')
-    login_page.password_input.get_input().send_keys('May')
+    time.sleep(2)
+    login_page.enter_username("Aarrarara")
+    login_page.password_input("125879")
     time.sleep(30)
